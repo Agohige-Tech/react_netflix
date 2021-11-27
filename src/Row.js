@@ -1,5 +1,5 @@
-import axios from "./axios";
 import React, { useState, useEffect } from "react";
+import axios from "./axios";
 import "./Row.css";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
@@ -15,6 +15,14 @@ function Row({ title, fetchURL, isLargeRow }) {
     }
     fetchData();
   }, [fetchURL]);
+
+  const opts = {
+    height: "390",
+    width: "100%",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
 
   return (
     <div className="row">
